@@ -1116,7 +1116,7 @@ async function fetchEbayPrice(appId, cardNum, cardName) {
     'paginationInput.entriesPerPage': '10',
   });
 
-  const url = `https://svcs.ebay.com/services/search/FindingService/v1?${params}`;
+  const PROXY_URL = 'https://ebay-proxy.6nryftxns6.workers.dev';
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const data = await res.json();
